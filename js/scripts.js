@@ -1,18 +1,24 @@
 //Array of Pokemon
 let pokemonList= [
-    {name: 'Charmander', 
+{
+    name: 'Charmander', 
     height: 0.6, 
     types: ['scale', 'fire']
 },
-    {name: 'Pikachu', 
+
+{
+    name: 'Pikachu', 
     height: 0.4, 
     types: ['electric', 'yellow']
 },
-    {name: 'Seel', 
+
+{
+    name: 'Seel', 
     height: 1.1, 
     types: ['water', 'wet']
 }
 ]
+
  //Array Loop Display
 let exclamation=""
 for (let i = 0; i < pokemonList.length; i++) {
