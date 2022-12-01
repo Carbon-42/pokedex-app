@@ -1,28 +1,29 @@
 //Array of Pokemon
 let pokemonList= [
-{
-    name: 'Charmander', 
-    height: 0.6, 
-    types: ['scale', 'fire']
-},
+    {
+        name: 'Charmander', 
+        height: 0.6, 
+        types: ['scale', 'fire']
+    },
 
-{
-    name: 'Pikachu', 
-    height: 0.4, 
-    types: ['electric', 'yellow']
-},
+    {
+        name: 'Pikachu', 
+        height: 0.4, 
+        types: ['electric', 'yellow']
+    },
 
-{
-    name: 'Seel', 
-    height: 1.1, 
-    types: ['water', 'wet']
-}
+    {
+        name: 'Seel', 
+        height: 1.1, 
+        types: ['water', 'wet']
+    }
 ]
 
  //Array Loop Display
 let exclamation=""
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 1) {exclamation= " - Wow that's big!"}
+
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height > 1) {exclamation= " - Wow that's big!"}
     else exclamation= ""
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m)" + exclamation); 
-}
+    document.write(pokemon.name + " (height: " + pokemon.height + "m)" + exclamation + '<br>'); 
+})
