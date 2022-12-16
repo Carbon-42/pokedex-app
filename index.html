@@ -2,18 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <title>Pokedex</title>
     </head>
     <body> 
-        <header>
-            <h1>POKEDEX</h1>
-        </header>
-        <div>
-            <ul class="pokemon-list">
-            </ul>
+        <div id="background-box">
+            <header>
+                <h1>POKEDEX</h1>
+            </header>
+            <div>
+                <ul class="pokemon-list">
+                </ul>
+            </div>        
         </div>
+        <script src="js/promise-polyfill.js"></script>
+        <script src="js/fetch-polyfill.js"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
