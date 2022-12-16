@@ -1,37 +1,58 @@
 body {
     display: block;
     text-align: center;
-    /* background-color: rgba(144, 153, 153, 0.329); */
+    background-color: rgba(245, 3, 3, 0.806);
     margin: auto;
+}
+
+#background-box {
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 5px;
+    width: 80%;
+    background-color:rgb(254, 251, 80);
+    border: 5px groove black;
 }
 
 h1 {
     font-family: fantasy;
-    font-weight: 500;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 ul {
     list-style: none;
-    text-align: left;
+    text-align: center;
     border: 1px solid black;
+    border-radius: 5px;
     margin: auto;
     padding: 10px;
-    background-color: rgba(144, 153, 153, 0.329);
-    width: 50%;
+    background-color: rgba(245, 3, 3, 0.806);
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 8px 8px rgba(0, 0, 0, 0.19);
+    width: 40%;
 }
 
 .poke-button {
     text-align: left;
-    border: 1px solid black;
-    width: 50%;
+    border: 2px solid black;
+    width: 70%;
     height: 50px;
     margin: 10px 10px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color:cornsilk;
+    background-color:rgb(254, 251, 80);
 }
 
+.poke-button:hover {
+    opacity: 90%;
+    cursor: pointer;
+}
 
-
-
+@media all and (max-width: 500px) {
+    .poke-button {
+        font-size: 90%;
+        text-align: center;
+        padding: 0;
+    }
+}
