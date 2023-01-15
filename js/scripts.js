@@ -22,6 +22,8 @@ let pokemonRepository = (function() {
         button.classList.add('poke-button');
         listItem.appendChild(button);
         someList.appendChild(listItem);
+        $(listItem).addClass('list-group-item');
+        $(button).addClass('btn btn-primary');
         button.addEventListener('click', function (event) {
             showDetails(pokemon);
         });
