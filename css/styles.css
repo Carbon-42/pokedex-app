@@ -14,40 +14,6 @@ body {
     border: 5px groove black;
 }
 
-/* #modal-container {
-    display: none;
-} */
-
-/* #modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    
-    /* to show above all other content */
-    /* z-index: 999; */
-
-    /* to allow scrolling if the screen is not high enough */
-    /* overflow: auto;  */
-    
-    /* this is used to center the modal */
-    /* display: grid;
-    text-align: center; */
-/* } */
-
-/* .modal-close {
-    float: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  } */
-
 .poke-name {
     text-transform: uppercase;
     margin-top: 0;
@@ -61,27 +27,6 @@ body {
     display: block;
     margin: auto;
 }
-
-/* .modal {
-    display: none;
-}
-
-.is-visible {
-    display: block;
-    background: rgba(0, 0, 0, 0.5);
-} */
-
-/* .modal {
-    margin: auto;
-    border-radius: 5px;
-    border: 1px solid;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 80%;
-    max-width: 400px;
-    text-align: left; 
-}  */
 
 h1 {
     font-family: fantasy;
@@ -105,7 +50,11 @@ ul {
     width: 400px;
 }
 
-.poke-button {
+.pokemon-list {
+    padding: 10px;
+}
+
+#poke-button {
     text-transform: uppercase;
     text-align: center;
     border: 2px solid black;
@@ -118,7 +67,7 @@ ul {
     background-color:rgb(254, 251, 80);
 }
 
-.poke-button:hover {
+#poke-button:hover {
     opacity: 80%;
     cursor: pointer;
 }
