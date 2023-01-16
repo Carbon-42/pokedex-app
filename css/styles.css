@@ -14,11 +14,11 @@ body {
     border: 5px groove black;
 }
 
-#modal-container {
+/* #modal-container {
     display: none;
-}
+} */
 
-#modal-container.is-visible {
+/* #modal-container.is-visible {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
@@ -29,24 +29,24 @@ body {
     background: rgba(0, 0, 0, 0.5);
     
     /* to show above all other content */
-    z-index: 999;
+    /* z-index: 999; */
 
-    /* to allow scrolling if the screen is not high enough*/
-    overflow: auto; 
+    /* to allow scrolling if the screen is not high enough */
+    /* overflow: auto;  */
     
     /* this is used to center the modal */
-    display: grid;
-    text-align: center;
-}
+    /* display: grid;
+    text-align: center; */
+/* } */
 
-.modal-close {
+/* .modal-close {
     float: right;
-    /* -webkit-appearance: none; */
+    -webkit-appearance: none;
     border: 0;
     background: none;
     color: #777;
     text-decoration: underline;
-  }
+  } */
 
 .poke-name {
     text-transform: uppercase;
@@ -62,9 +62,17 @@ body {
     margin: auto;
 }
 
-.modal {
+/* .modal {
+    display: none;
+}
+
+.is-visible {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+} */
+
+/* .modal {
     margin: auto;
-    display: inline-block;
     border-radius: 5px;
     border: 1px solid;
     box-sizing: border-box;
@@ -72,13 +80,17 @@ body {
     padding: 15px;
     width: 80%;
     max-width: 400px;
-    text-align: left;
-}
+    text-align: left; 
+}  */
 
 h1 {
     font-family: fantasy;
     font-size: 50px;
     font-weight: bold;
+}
+
+h2 {
+    text-transform: uppercase;
 }
 
 ul {
