@@ -1,8 +1,22 @@
 body {
     display: block;
     text-align: center;
-    background-color: rgba(245, 3, 3, 0.806);
+    background-color: rgba(245, 3, 3);
     margin: auto;
+    padding: 26px;
+}
+
+.navbar {
+    background-color: inherit
+}
+
+.form-control, .btn-outline-dark{
+    border: 2px solid;
+}
+
+.btn-outline-dark {
+    margin-left: 10px;
+    color: black;
 }
 
 #background-box {
