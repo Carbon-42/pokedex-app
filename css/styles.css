@@ -10,6 +10,12 @@ body {
     background-color: inherit
 }
 
+.navbar-brand {
+    font-family: fantasy;
+    font-weight: bold;
+    color: #040f16;
+}
+
 .form-control, .btn-outline-dark{
     border: 2px solid;
 }
@@ -61,7 +67,7 @@ ul {
     padding: 10px;
     background-color: rgba(245, 3, 3, 0.806);
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 8px 8px rgba(0, 0, 0, 0.19);
-    width: 400px;
+    max-width: 400px;
 }
 
 .pokemon-list {
@@ -87,7 +93,7 @@ ul {
 }
 
 @media all and (max-width: 700px) {
-    .poke-button, h2 {
+    #poke-button, h2 {
         font-size: 90%;
         padding: 0;
     }
@@ -96,12 +102,16 @@ ul {
     }
 
 @media all and (max-width: 500px) {
-    .poke-button {
+    #poke-button {
         font-size: 80%;
     }
 
     ul {
         width: 90%;
+    }
+
+    body {
+        padding-top: 70px;
     }
 }
 }
