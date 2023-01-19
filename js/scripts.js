@@ -3,15 +3,22 @@ let pokemonRepository = (function() {
     let pokemonList= [];
 
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+	let inputField = document.querySelector('.search');
+
+	let printedList = document.querySelector('.pokemon-list');
     
+	// grabs data from API to return outside IIFE
     function getAll() {
         return pokemonList;
     }
 
+	// adds pokemon to list
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
 
+	//displays pokemon list buttons
     function addListItem(pokemon) {
         let someList = $('.pokemon-list');
         let listItem = $('<li></li>');
@@ -23,7 +30,46 @@ let pokemonRepository = (function() {
             showDetails(pokemon);
         });
     }
+     
+    // create search box functionality
+    function filterPokemon(query) {
+    	return pokemonList.filter(function (pokemon) {
+     	 // toLowerCase() method to make input not case-sensitive
+		let pokemonLowerCase = pokemon.name.toLowerCase();
+		let queryLowerCase = query.toLowerCase();
+		return pokemonLowerCase.startsWith(queryLowerCase);
+		});
+	}
 
+	inputField.addEventListener('input', function () {
+		let query = inputField.value;
+		let filteredList = filterPokemon(query);
+		removeList();
+		if (filteredList.length === 0) {
+		showErrorMessage(
+			'Sorry. There are no Pokémon matching your search criteria.'
+		);
+		} else {
+		filteredList.forEach(addListItem);
+		}
+	});
+
+	// clears button list when searching
+	function removeList() {
+		printedList.innerHTML = '';
+	  }
+
+	//shows error message for empty search list  
+	function showErrorMessage(message) {
+		let errorMessage = document.createElement('p');
+		errorMessage.classList.add('error-message');
+		errorMessage.classList.add('col');
+		errorMessage.innerText = message;
+	
+		printedList.appendChild(errorMessage);
+	}
+
+	//loading pokemon details from API
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
@@ -40,6 +86,7 @@ let pokemonRepository = (function() {
         });
     }
 
+	//loading individiual details from loadList function
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -56,12 +103,14 @@ let pokemonRepository = (function() {
         });
     }     
 
+	//displays modal
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
             showModal(pokemon);
         });
     }
 
+	//creates modal
     function showModal(pokemon) {
 
         let modalBody = $('.modal-body');
