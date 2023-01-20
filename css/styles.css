@@ -54,7 +54,7 @@ h1 {
     font-weight: bold;
 }
 
-h2 {
+h2, h5 {
     text-transform: capitalize;
 }
 
@@ -85,8 +85,8 @@ li {
     text-transform: capitalize;
     text-align: center;
     border: 2px solid black;
-    width: 70%;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     margin: 10px 10px;
     padding: 10px;
     border-radius: 10px;
@@ -99,8 +99,8 @@ li {
     cursor: pointer;
 }
 
-@media all and (max-width: 700px) {
-    #poke-button, h2 {
+@media all and (max-width: 630px) {
+    #poke-button, h5 {
         font-size: 90%;
         padding: 0;
     }

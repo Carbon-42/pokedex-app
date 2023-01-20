@@ -17,19 +17,6 @@ let pokemonRepository = (function() {
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
-
-	//displays pokemon list buttons
-    function addListItem(pokemon) {
-        let someList = $('.pokemon-list');
-        let listItem = $('<li class="col"></li>');
-        let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + pokemon.name + '</button>');
-        listItem.append(button);
-        someList.append(listItem);
-
-        button.on('click', function () {
-            showDetails(pokemon);
-        });
-    }
      
     // create search box functionality
     function filterPokemon(query) {
@@ -77,9 +64,10 @@ let pokemonRepository = (function() {
           json.results.forEach(function (item) {
             let pokemon = {
               name: item.name,
-              detailsUrl: item.url
+              detailsUrl: item.url,
             };
             add(pokemon);
+			// console.log(pokemon);
           });
         }).catch(function (e) {
           console.error(e);
@@ -101,7 +89,37 @@ let pokemonRepository = (function() {
         }).catch(function (e) {
           console.error(e);
         });
-    }     
+    }
+	
+	//loads pokemon img 
+	function loadImg(item) {
+		let url = item.detailsUrl;
+		return fetch(url).then(function (response) {
+		  return response.json();
+		}).then(function (details) {
+		  item.imageFrontUrl = details.sprites.front_default;
+		}).catch(function (e) {
+		  console.error(e);
+		});
+	}   
+
+	//displays pokemon list buttons
+    function addListItem(pokemon) {
+		//loading img can be used in button display
+        loadImg(pokemon).then(function () {
+			let someList = $('.pokemon-list');
+			let listItem = $('<li class="col"></li>');
+			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
+			let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
+			button.append(image);
+			listItem.append(button);
+			someList.append(listItem);
+
+			button.on('click', function () {
+				showDetails(pokemon);
+			});
+		});
+    }
 
 	//displays modal
     function showDetails(pokemon) {
