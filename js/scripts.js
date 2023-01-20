@@ -97,6 +97,7 @@ let pokemonRepository = (function() {
 		return fetch(url).then(function (response) {
 		  return response.json();
 		}).then(function (details) {
+<<<<<<< Updated upstream
 		  pokemon.imageFrontUrl = details.sprites.front_default;
 		  let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
 		  let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
@@ -109,6 +110,20 @@ let pokemonRepository = (function() {
 			showDetails(pokemon);
 		});
 
+=======
+			pokemon.imageFrontUrl = details.sprites.front_default;
+			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
+			let someList = $('.pokemon-list');
+			let listItem = $('<li class="col"></li>');
+			let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
+			button.append(image);
+			listItem.append(button);
+			someList.append(listItem);
+
+			button.on('click', function () {
+				showDetails(pokemon);
+			});
+>>>>>>> Stashed changes
 		}).catch(function (e) {
 		  console.error(e);
 		});
