@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-brand {
-    font-family: fantasy;
+    font-family: 'Acme';
     font-weight: bold;
     color: #040f16;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 h1 {
-    font-family: fantasy;
+    font-family: 'Acme';
     font-size: 50px;
     font-weight: bold;
 }
@@ -82,6 +82,7 @@ li {
 }
 
 #poke-button {
+    font-family: 'Acme';
     text-transform: capitalize;
     text-align: center;
     border: 2px solid black;
@@ -111,10 +112,6 @@ li {
 @media all and (max-width: 500px) {
     #poke-button {
         font-size: 80%;
-    }
-
-    ul {
-        width: 90%;
     }
 
     body {
