@@ -58,6 +58,10 @@ h2, h5 {
     text-transform: capitalize;
 }
 
+h5 {
+    color: black;
+}
+
 ul {
     list-style: none;
     text-align: center;
