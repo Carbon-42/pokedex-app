@@ -107,9 +107,9 @@ let pokemonRepository = (function() {
     function addListItem(pokemon) {
 		//loading img can be used in button display
         loadImg(pokemon).then(function () {
+			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
 			let someList = $('.pokemon-list');
 			let listItem = $('<li class="col"></li>');
-			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
 			let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
 			button.append(image);
 			listItem.append(button);
@@ -118,7 +118,7 @@ let pokemonRepository = (function() {
 			button.on('click', function () {
 				showDetails(pokemon);
 			});
-		});
+        });
     }
 
 	//displays modal
