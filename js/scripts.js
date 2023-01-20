@@ -92,21 +92,12 @@ let pokemonRepository = (function() {
     }
 	
 	//loads pokemon img 
-	function loadImg(item) {
-		let url = item.detailsUrl;
+	function loadImg(pokemon) {
+		let url = pokemon.detailsUrl;
 		return fetch(url).then(function (response) {
 		  return response.json();
 		}).then(function (details) {
-		  item.imageFrontUrl = details.sprites.front_default;
-		}).catch(function (e) {
-		  console.error(e);
-		});
-	}   
-
-	//displays pokemon list buttons
-    function addListItem(pokemon) {
-		//loading img can be used in button display
-        loadImg(pokemon).then(function () {
+			pokemon.imageFrontUrl = details.sprites.front_default;
 			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
 			let someList = $('.pokemon-list');
 			let listItem = $('<li class="col"></li>');
@@ -118,7 +109,14 @@ let pokemonRepository = (function() {
 			button.on('click', function () {
 				showDetails(pokemon);
 			});
-        });
+		}).catch(function (e) {
+		  console.error(e);
+		});
+	}   
+
+	//displays pokemon list buttons
+    function addListItem(pokemon) {
+        loadImg(pokemon);
     }
 
 	//displays modal
@@ -161,6 +159,7 @@ let pokemonRepository = (function() {
         loadList: loadList,
         loadDetails: loadDetails,
         addListItem: addListItem,
+		loadImg: loadImg
     };
 
 })()
@@ -168,7 +167,8 @@ let pokemonRepository = (function() {
  //Array Loop Display
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon) {
-        pokemonRepository.addListItem(pokemon);
-})})
+			pokemonRepository.addListItem(pokemon);
+		})
+})
 
 
