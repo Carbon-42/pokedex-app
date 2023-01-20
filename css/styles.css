@@ -26,7 +26,7 @@ body {
 }
 
 #background-box {
-    padding: 30px;
+    padding: 20px;
     margin: 30px auto;
     border-radius: 5px;
     width: 80%;
@@ -63,7 +63,6 @@ ul {
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
-    margin: auto;
     padding: 10px;
     background-color: rgba(245, 3, 3, 0.806);
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 8px 8px rgba(0, 0, 0, 0.19);
@@ -78,7 +77,8 @@ li {
 }
 
 .pokemon-list {
-    padding: 10px;
+    margin: 0 5px;
+    padding: 0;
 }
 
 #poke-button {
@@ -100,22 +100,8 @@ li {
     cursor: pointer;
 }
 
-@media all and (max-width: 630px) {
-    #poke-button, h5 {
-        font-size: 90%;
-        padding: 0;
-    }
-    h1 {
-        font-size: 30px;
-    }
-
 @media all and (max-width: 500px) {
-    #poke-button {
-        font-size: 80%;
-    }
-
     body {
         padding-top: 70px;
     }
-}
 }
