@@ -102,7 +102,8 @@ let pokemonRepository = (function() {
 		  console.error(e);
 		});
 	}   
-
+    
+	//creates button and adds name and image
     function addListItem(pokemon) {
 		let someList = $('.pokemon-list');
 		let listItem = $('<li class="col"></li>');
