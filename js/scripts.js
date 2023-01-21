@@ -92,15 +92,23 @@ let pokemonRepository = (function() {
     }
 	
 	//loads pokemon img 
-	function loadImg(pokemon) {
-		let url = pokemon.detailsUrl;
+	function loadImg(item) {
+		let url = item.detailsUrl;
 		return fetch(url).then(function (response) {
 		  return response.json();
 		}).then(function (details) {
-			pokemon.imageFrontUrl = details.sprites.front_default;
-			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
+			item.imageFrontUrl = details.sprites.front_default;
+		}).catch(function (e) {
+		  console.error(e);
+		});
+	}   
+
+	//displays pokemon list buttons
+    function addListItem(pokemon) {
+        loadImg(pokemon).then (function() {
 			let someList = $('.pokemon-list');
 			let listItem = $('<li class="col"></li>');
+			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
 			let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
 			button.append(image);
 			listItem.append(button);
@@ -109,14 +117,7 @@ let pokemonRepository = (function() {
 			button.on('click', function () {
 				showDetails(pokemon);
 			});
-		}).catch(function (e) {
-		  console.error(e);
 		});
-	}   
-
-	//displays pokemon list buttons
-    function addListItem(pokemon) {
-        loadImg(pokemon);
     }
 
 	//displays modal
