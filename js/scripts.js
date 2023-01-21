@@ -103,16 +103,15 @@ let pokemonRepository = (function() {
 		});
 	}   
 
-	//displays pokemon list buttons
     function addListItem(pokemon) {
-        loadImg(pokemon).then (function() {
-			let someList = $('.pokemon-list');
-			let listItem = $('<li class="col"></li>');
+		let someList = $('.pokemon-list');
+		let listItem = $('<li class="col"></li>');
+		let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
+		listItem.append(button);
+		someList.append(listItem);
+		loadImg(pokemon).then (function() {
 			let image = $('<img src="' + pokemon.imageFrontUrl + '" />');
-			let button = $('<button id="poke-button" data-toggle="modal" data-target="#modal-container">' + '<h5>' + pokemon.name + '</h5>' + '</button>');
 			button.append(image);
-			listItem.append(button);
-			someList.append(listItem);
 
 			button.on('click', function () {
 				showDetails(pokemon);
