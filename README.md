@@ -181,7 +181,7 @@ Scenario 1: When user loads the page fetch external data.
 
 Scenario 1: After the external data has been fetch, display the data.
 
-> **Given** user is viewing the pokémon list  
+> **Given** user is viewing the pokémon list
 > **When** the user sees a pokémon
 > **Then** the pokémon details will be hidden by default
 
@@ -191,13 +191,13 @@ Scenario 1: After the external data has been fetch, display the data.
 
 Scenario 1: When user clicks on a pokémon it opens a modal with further details.
 
-> **Given** the user has made a selection  
+> **Given** the user has made a selection
 > **When** the user clicks on a pokémon
 > **Then** the details modal will appear
 
 Scenario 2: When user clicks outside a pokémon modal it disappears.
 
-> **Given** the user is viewing a pokémon's details  
+> **Given** the user is viewing a pokémon's details
 > **When** the user clicks outside the modal
 > **Then** the modal disappears
 
