@@ -171,7 +171,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 Scenario 1: When user loads the page fetch external data.
 
-> **Given** user loads the page
+> **Given** user loads the page  
 > **When** the user opens the app  
 > **Then** the external API data will be fetched
 
@@ -181,8 +181,8 @@ Scenario 1: When user loads the page fetch external data.
 
 Scenario 1: After the external data has been fetch, display the data.
 
-> **Given** user is viewing the pokémon list
-> **When** the user sees a pokémon
+> **Given** user is viewing the pokémon list  
+> **When** the user sees a pokémon  
 > **Then** the pokémon details will be hidden by default
 
 <br>
@@ -191,14 +191,14 @@ Scenario 1: After the external data has been fetch, display the data.
 
 Scenario 1: When user clicks on a pokémon it opens a modal with further details.
 
-> **Given** the user has made a selection
-> **When** the user clicks on a pokémon
+> **Given** the user has made a selection  
+> **When** the user clicks on a pokémon  
 > **Then** the details modal will appear
 
 Scenario 2: When user clicks outside a pokémon modal it disappears.
 
-> **Given** the user is viewing a pokémon's details
-> **When** the user clicks outside the modal
+> **Given** the user is viewing a pokémon's details  
+> **When** the user clicks outside the modal  
 > **Then** the modal disappears
 
 <br>
@@ -207,14 +207,14 @@ Scenario 2: When user clicks outside a pokémon modal it disappears.
 
 Scenario 1: When user types in the search bar it filters the list
 
-> **Given** the user is typing in the search bar
-> **When** the user types a letter
+> **Given** the user is typing in the search bar  
+> **When** the user types a letter  
 > **Then** the list will be filtered by the input letter
 
 Scenario 2: Show empty list message when search filter contains no pokémon
 
-> **Given** the user has typed something in the searchbar
-> **When** the entry does not match any pokémon
+> **Given** the user has typed something in the searchbar  
+> **When** the entry does not match any pokémon  
 > **Then** the list will disapear and show a message saying no pokémon match the search
 
 <br>
