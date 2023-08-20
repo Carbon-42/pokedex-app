@@ -40,9 +40,9 @@ PokéAPI used for this application
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Carbon-42/pokedex-app">
+  <!-- <a href="https://github.com/Carbon-42/pokedex-app">
     <img src="./public/meet-app-192.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">Pokédex App</h3>
 <a href="https://carbon-42.github.io/pokedex-app" target="_blank">Live URL</a>
@@ -90,7 +90,7 @@ PokéAPI used for this application
 
 ## About The Project
 
-<img src="./public/Screenshot.png">
+<img src="Picture1.png">
 
 Pokédex app is a a small web application built with HTML, CSS, and JavaScript. It loads data from an external API and enables the viewing of Pokémon details on demand.
 
